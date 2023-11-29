@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh './gradlew clean build --info --stacktrace'
+                    bat './gradlew clean build --info --stacktrace'
                 }
             }
         }
