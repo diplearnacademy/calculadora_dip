@@ -6,17 +6,22 @@ pipeline {
             steps {
                 // Pruebas unitarias
                 script {
-                    sh './gradlew clean test --info --stacktrace'
+                    bat './gradlew test --info --stacktrace'
                 }
             }
         }
         stage('Build') {
-        // Construir tu proyecto
             steps {
+                // Construir tu proyecto
                 script {
-                    bat './gradlew clean build --info --stacktrace'
+                    bat './gradlew build --info --stacktrace'
                 }
             }
+        }
+    }
+    post {
+        always {
+            // Aquí puedes agregar pasos a ejecutar después de las etapas, como limpiar
         }
     }
 }
