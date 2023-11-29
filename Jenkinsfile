@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Pruebas unitarias
                 script {
-                    sh './gradlew clean test --info --stacktrace'
+                    bat './gradlew clean test --info --stacktrace'
                 }
             }
         }
